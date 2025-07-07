@@ -235,6 +235,24 @@
     <a href="ferrari.html">Ferrari</a>
   </div>
 </div>
+<div id="mensaje-exito" style="display:none; color: green; margin-top: 15px;">
+  ✅ Tu mensaje ha sido enviado exitosamente. ¡Gracias por contactarnos!
+</div>
+<script>
+  const form = document.querySelector("form");
+  const mensaje = document.getElementById("mensaje-exito");
 
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    mensaje.style.display = "block"; // Mostrar mensaje
+    form.reset(); // Limpiar formulario
+
+    // Opcional: ocultar el mensaje después de 5 segundos
+    setTimeout(() => {
+      mensaje.style.display = "none";
+    }, 5000);
+  });
+</script>
 </body>
 </html>
